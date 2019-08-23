@@ -1,0 +1,27 @@
+{
+  "name": "silver-googles-backend",
+  "version": "1.0.0",
+  "description": "Serverless back end for the site",
+  "main": "handler.js",
+  "scripts": {
+    "test": "serverless-bundle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtm04/silver-goggles.git"
+  },
+  "author": "Donny MacPhail",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dtm04/silver-goggles/issues"
+  },
+  "homepage": "https://github.com/dtm04/silver-goggles#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.516.0",
+    "serverless-bundle": "^1.2.3",
+    "serverless-offline": "^5.10.1"
+  },
+  "dependencies": {
+    "uuid": "^3.3.3"
+  }
+}
