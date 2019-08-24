@@ -10,6 +10,30 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.15
   stage: prod
   region: us-east-1
+
+# 'iamRoleStatements' defines the permission policy for the Lambda function.
+# In this case Lambda functions are granted with permissions to access DynamoDB.
+iamRoleStatements:
+  - Effect: Allow
+    Action:
+      - dynamodb:DescribeTable
+      - dynamodb:Query
+      - dynamodb:Scan
+      - dynamodb:GetItem
+      - dynamodb:PutItem
+      - dynamodb:UpdateItem
+      - dynamodb:DeleteItem
+    Resource: "arn:aws:dynamodb:us-east-1:*:*"
+
+functions:
+  create:
+    handler: contactRequest.main
+    events:
+      - http:
+          path: contact
+          method: post
+          cors: true
+          authorizer: aws_iam

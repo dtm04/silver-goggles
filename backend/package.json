@@ -18,6 +18,8 @@
   "homepage": "https://github.com/dtm04/silver-goggles#readme",
   "devDependencies": {
     "aws-sdk": "^2.516.0",
+    "moment": "^2.24.0",
+    "prettier": "1.18.2",
     "serverless-bundle": "^1.2.3",
     "serverless-offline": "^5.10.1"
   },
